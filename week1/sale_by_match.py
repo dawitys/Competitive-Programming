@@ -18,11 +18,11 @@ def sockMerchant(n, ar):
             available_colors[i] += 1
         else:
             available_colors[i] = 1
-        print(available_colors)
+
     return pairs
             
 if __name__ == '__main__':
-    #fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
     n = int(input())
 
@@ -31,6 +31,6 @@ if __name__ == '__main__':
     result = sockMerchant(n, ar)
 
     print(result)
-    #fptr.write(str(result) + '\n')
+    fptr.write(str(result) + '\n')
 
-    #fptr.close()
+    fptr.close()
