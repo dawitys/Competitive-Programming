@@ -20,7 +20,7 @@ def big_int_addition(a,b):
             b_str = '0'+ b_str
     
     for i in range (len(a_str)):
-        if(negative_nu == 1):
+        if(negative_num == 1):
             final += str(int(b_str) - int(a_str))
         elif(negative_num == 2):
             final += str(int(a_str) - int(b_str))
@@ -32,4 +32,4 @@ def big_int_addition(a,b):
 
     return int(result)
 
-print(big_int_addition(0,0))
+print(big_int_addition(-365463458400,452486453515113516))
