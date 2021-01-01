@@ -19,17 +19,42 @@ def big_int_addition(a,b):
         while(len(a_str) > len(b_str)):
             b_str = '0'+ b_str
     
-    for i in range (len(a_str)):
+    carry = 0
+    for i in range (len(a_str)-1,-1,-1):
+        print("inloop")
         if(negative_num == 1):
-            final += str(int(b_str) - int(a_str))
+            digit1 = int(b_str[i])
+            if carry == -1:
+                digit1 -= 1
+                carry = 0
+            if digit1 < int(a_str[i]):
+                carry = -1
+                digit1 = 10 + digit1
+            temp = digit1 - int(a_str[i])
+            final = str(temp % 10) + final
         elif(negative_num == 2):
-            final += str(int(a_str) - int(b_str))
+            digit1 = int(a_str[i])
+            if carry == -1:
+                digit1 -= 1
+                carry = 0
+            if digit1 < int(b_str[i]):
+                carry = -1
+                digit1 = (10 + digit1)
+            temp = digit1 - int(b_str[i])
+            final = str(temp % 10) + final 
+            print(temp)
         else:
-            final += str(int(b_str) + int(b_str))
+            temp = int(b_str[i]) + int(a_str[i])
+            if carry > 0:
+                temp += carry
+                carry = 0
+            if(temp >=10):
+                carry += 1
+            final = str(temp % 10) + final
 
     if negative_num == -1:
-        return 0-int(result)
+        return 0-int(final)
 
-    return int(result)
+    return int(final)
 
-print(big_int_addition(-365463458400,452486453515113516))
+print(big_int_addition(46,-157))
