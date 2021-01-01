@@ -21,7 +21,6 @@ def big_int_addition(a,b):
     
     carry = 0
     for i in range (len(a_str)-1,-1,-1):
-        print("inloop")
         if(negative_num == 1):
             digit1 = int(b_str[i])
             if carry == -1:
@@ -29,9 +28,9 @@ def big_int_addition(a,b):
                 carry = 0
             if digit1 < int(a_str[i]):
                 carry = -1
-                digit1 = 10 + digit1
+                digit1 = (10 + digit1)
             temp = digit1 - int(a_str[i])
-            final = str(temp % 10) + final
+            final = str(temp) + final
         elif(negative_num == 2):
             digit1 = int(a_str[i])
             if carry == -1:
@@ -41,8 +40,7 @@ def big_int_addition(a,b):
                 carry = -1
                 digit1 = (10 + digit1)
             temp = digit1 - int(b_str[i])
-            final = str(temp % 10) + final 
-            print(temp)
+            final = str(temp) + final
         else:
             temp = int(b_str[i]) + int(a_str[i])
             if carry > 0:
@@ -57,4 +55,4 @@ def big_int_addition(a,b):
 
     return int(final)
 
-print(big_int_addition(46,-157))
+print(big_int_addition(6276, 18014))
