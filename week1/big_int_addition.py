@@ -55,4 +55,4 @@ def big_int_addition(a,b):
 
     return int(final)
 
-print(big_int_addition(6276, 18014))
+print(big_int_addition(0, 0))
