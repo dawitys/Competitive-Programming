@@ -20,15 +20,12 @@ def big_int_addition(a,b):
             b_str = '0'+ b_str
     
     for i in range (len(a_str)):
-        if(negative_num==1):
-            result = int(b_str) - int(a_str)
-            final += str(result)
-        elif(negative_num==2):
-            result = int(a_str) - int(b_str)
-            final += str(result)
+        if(negative_nu == 1):
+            final += str(int(b_str) - int(a_str))
+        elif(negative_num == 2):
+            final += str(int(a_str) - int(b_str))
         else:
-            result = int(b_str) + int(b_str)
-            final += str(result)
+            final += str(int(b_str) + int(b_str))
 
     if negative_num == -1:
         return 0-int(result)
