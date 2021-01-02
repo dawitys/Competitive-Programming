@@ -42,4 +42,4 @@ def big_int_addition(a,b):
 
     return int(final)
 
-big_int_multiplication(123,120)
+big_int_multiplication(123,1001)

@@ -49,10 +49,11 @@ def big_int_addition(a,b):
             if(temp >=10):
                 carry += 1
             final = str(temp % 10) + final
+    print(carry)
 
     if negative_num == -1:
         return 0-int(final)
 
     return int(final)
 
-print(big_int_addition(0, 0))
+print(big_int_addition(19, -82))
