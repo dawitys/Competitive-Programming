@@ -1,20 +1,27 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the repeatedString function below.
 def repeatedString(s, n):
-    count = 0
-    additional = 0
-    iter = 0
-    for i in s:
-        if i == 'a':
-            count += 1
+    repeatAmount = n//len(s)
+    numberEdgeSubString = s[:(n%len(s))].count('a')
+    aIns = list(s).count('a')
+    return (repeatAmount * aIns) + numberEdgeSubString
 
-    while(count*len(s) < n):
-        iter += 1
-        val = len(s)
-        if(n- len(s) < len(s)):
-            val = n % len(s)
-            for i in s[0:val]:
-                if i == 'a':
-                    count += 1
-                    break
-    return count * iter + additional
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
-print(repeatedString("a",736778906400))
+    s = input()
+
+    n = int(input())
+
+    result = repeatedString(s, n)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
