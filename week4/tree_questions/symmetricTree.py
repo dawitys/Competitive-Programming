@@ -7,18 +7,18 @@
 class Solution:
     def isSymmetric(self, root: TreeNode) -> bool:
         if root is None:
-          return True
+            return True
         return self.isMirror(root.left, root.right)
 
-      def isMirror(self, left, right):
+    def isMirror(self, left, right):
         if left is None and right is None:
-          return True
+            return True
         if left is None or right is None:
-          return False
+            return False
 
         if left.val == right.val:
-          outPair = self.isMirror(left.left, right.right)
-          inPiar = self.isMirror(left.right, right.left)
-          return outPair and inPiar
+            outPair = self.isMirror(left.left, right.right)
+            inPiar = self.isMirror(left.right, right.left)
+            return outPair and inPiar
         else:
-          return False
+            return False
