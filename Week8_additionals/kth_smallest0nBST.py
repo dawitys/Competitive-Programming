@@ -1,4 +1,4 @@
-lass Solution:
+class Solution:
     def kthSmallest(self, root, k):
         """
         :type root: TreeNode
